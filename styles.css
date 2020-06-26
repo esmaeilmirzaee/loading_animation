@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'montserrat', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #34495e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: 2s animeOne linear infinite;
+}
+
+.loading {
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 10px solid #c06c84;
+  position: relative;
+}
+
+.loading span {
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  width: 200px;
+  line-height: 200px;
+  animation: 2s animeTwo linear infinite;
+}
+
+.loading::before,
+.loading::after {
+  content: '';
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.loading::before {
+  border-top: 10px solid #6c5b7b;
+  transform: rotate(120deg);
+}
+
+.loading::after {
+  border-top: 10px solid #355c7d;
+  transform: rotate(240deg);
+}
+
+@keyframes animeOne {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animeTwo {
+  to {
+    transform: rotate(-360deg);
+  }
+}
